@@ -1,0 +1,72 @@
+@import '../../../styles/styles';
+
+:host {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  position: relative;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    transition: opacity .2s ease;
+    z-index: 0;
+  }
+
+  &:before {
+    background-position: 10px 10px;
+    background-repeat: repeat;
+    background-size: 5px 5px;
+  }
+
+  &:after {
+    background-position: 10px 10px;
+    background-repeat: repeat;
+    background-size: 25px 25px;
+  }
+}
+
+:host(:not([grid-visible])) {
+  &:before,
+  &:after {
+    opacity: 0;
+  }
+}
+
+:host([grid-visible]) {
+  &:before,
+  &:after {
+    opacity: 1;
+  }
+}
+
+.stage {
+  position: relative;
+  z-index: 3;
+}
+
+:host(:not([dark-theme])) {
+  &:before {
+    background-image: linear-gradient(to right, $color-grey-1 1px, transparent 1px), linear-gradient(to bottom, $color-grey-1 1px, transparent 1px);
+  }
+
+  &:after {
+    background-image: linear-gradient(to right, #d1d1d1 1px, transparent 1px), linear-gradient(to bottom, #d1d1d1 1px, transparent 1px);
+  }
+}
+
+:host([dark-theme]) {
+  &:before {
+    background-image: linear-gradient(to right, #3d3d3d 1px, transparent 1px), linear-gradient(to bottom, #3d3d3d 1px, transparent 1px);
+  }
+
+  &:after {
+    background-image: linear-gradient(to right, #565656 1px, transparent 1px), linear-gradient(to bottom, #565656 1px, transparent 1px);
+  }
+}

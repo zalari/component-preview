@@ -1,0 +1,73 @@
+@import '../../styles/styles';
+
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0;
+
+  &:first-of-type {
+    padding-top: 0;
+  }
+}
+
+.label,
+.link {
+  min-width: 100px;
+}
+
+.label {
+  color: $color-grey-5;
+  font-family: Menlo, Consolas, Lucida Console, 'Courier New', 'dejavu sans mono', monospace;
+  font-size: 70%;
+  padding: 0 10px 5px;
+
+  &:before {
+    content: '<';
+  }
+
+  &:after {
+    content: '>';
+  }
+}
+
+.link {
+  cursor: pointer;
+  padding: 5px 10px 5px 15px;
+
+  &.active {
+    cursor: default;
+    pointer-events: none;
+    transition: background-color .2s ease;
+
+    :host(:not([dark-theme])) & {
+      background-color: $color-grey-1;
+    }
+
+    :host([dark-theme]) & {
+      background-color: $color-grey-6;
+    }
+  }
+}
+
+so-preview-switch {
+  margin-left: 10px;
+  margin-right: 10px;
+
+  &:first-of-type {
+    justify-self: flex-end;
+    margin-bottom: 5px;
+    margin-top: auto;
+  }
+}

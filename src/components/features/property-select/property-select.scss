@@ -1,0 +1,29 @@
+@import '../../../styles/styles';
+
+label {
+  cursor: pointer;
+  user-select: none;
+}
+
+select {
+  border: 1px solid $color-grey-2;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: block;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  outline: 0;
+  transition: .2s ease;
+  transition-property: background-color, color;
+  width: 100%;
+
+  :host(:not([dark-theme])) & {
+    background-color: $color-white;
+    color: $color-grey-7;
+  }
+
+  :host([dark-theme]) & {
+    background-color: $color-grey-5;
+    color: $color-grey-2;
+  }
+}

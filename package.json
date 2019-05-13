@@ -1,0 +1,46 @@
+{
+  "name": "@zalari/component-preview",
+  "version": "0.1.0",
+  "license": "MIT",
+  "module": "dist/esm/index.js",
+  "main": "dist/index.js",
+  "types": "dist/types/components.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "author": {
+    "email": "info@zalari.de",
+    "name": "Zalari GmbH",
+    "url": "https://www.zalari.de"
+  },
+  "files": [
+    "dist/",
+    "www/"
+  ],
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "stencil build --docs",
+    "start": "stencil build --prod --watch --serve",
+    "test": "stencil test --spec",
+    "test:watch": "stencil test --spec --watchAll"
+  },
+  "dependencies": {
+    "core-js": "3.0.1",
+    "history": "4.9.0"
+  },
+  "devDependencies": {
+    "@stencil/core": "0.18.1",
+    "@stencil/sass": "0.2.1",
+    "@types/chrome": "0.0.83",
+    "@types/history": "4.7.2",
+    "@types/jest": "23.3.14",
+    "@types/node": "10.14.6",
+    "@types/puppeteer": "1.12.3",
+    "jest": "23.6.0",
+    "jest-cli": "23.6.0"
+  }
+}

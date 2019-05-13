@@ -1,0 +1,76 @@
+@import '../../../styles/styles';
+
+:host {
+  @include font-presets();
+  display: flex;
+  flex-direction: row;
+  font-size: 1.4rem;
+  height: 100%;
+  transition: .2s ease;
+  transition-property: background-color, color;
+}
+
+:host(:not([dark-theme])) {
+  background-color: $color-white;
+  color: $color-grey-7;
+}
+
+:host([dark-theme]) {
+  background-color: $color-grey-7;
+  color: $color-grey-2;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow .2s ease;
+
+  :host(:not([dark-theme])) & {
+    box-shadow: 0 0 20px $color-shadow-light;
+  }
+
+  :host([dark-theme]) & {
+    box-shadow: 0 0 20px $color-shadow-dark;
+  }
+}
+
+.renderer {
+  flex: 1 1 auto;
+}
+
+.properties,
+.settings {
+  :host(:not([dark-theme])) & {
+    background: $color-grey-1;
+  }
+
+  :host([dark-theme]) & {
+    background: $color-grey-5;
+  }
+}
+
+.code,
+.properties {
+  flex: 0 1 auto;
+
+  :host(:not([dark-theme])) & {
+    box-shadow: 0 0 20px $color-shadow-light;
+  }
+
+  :host([dark-theme]) & {
+    box-shadow: 0 0 20px $color-shadow-dark;
+  }
+}
+
+.code {
+  max-height: 150px;
+  overflow: auto;
+}

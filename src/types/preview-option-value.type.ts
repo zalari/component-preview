@@ -1,0 +1,1 @@
+export type PreviewOptionValue = string | number | boolean;

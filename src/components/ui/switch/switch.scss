@@ -1,0 +1,81 @@
+@import '../../../styles/styles';
+
+:host {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  user-select: none;
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+  }
+
+  &:before {
+    border: 1px solid;
+    border-radius: 15px;
+    margin-right: 5px;
+    transition: .2s ease;
+    transition-property: background-color, border-color;
+    height: 15px;
+    width: 30px;
+  }
+
+  &:after {
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    transition: .2s ease;
+    transition-property: background-color, left;
+    height: 13px;
+    width: 13px;
+  }
+}
+
+:host(:not([active])):after {
+  left: 2px;
+}
+
+:host([active]):after {
+  left: 17px;
+}
+
+// light theme
+:host(:not([dark-theme]):not([active])):before {
+  background-color: $color-grey-1;
+}
+
+:host(:not([dark-theme])[active]):before {
+  background-color: $color-white;
+}
+
+:host(:not([dark-theme])) {
+  &:before {
+    border-color: $color-grey-4;
+  }
+
+  &:after {
+    background-color: $color-grey-4;
+  }
+}
+
+// dark theme
+:host([dark-theme]:not([active])):before {
+  background-color: $color-grey-7;
+}
+
+:host([dark-theme][active]):before {
+  background-color: $color-grey-5;
+}
+
+:host([dark-theme]) {
+  &:before {
+    border-color: $color-grey-3;
+  }
+
+  &:after {
+    background-color: $color-grey-3;
+  }
+}
