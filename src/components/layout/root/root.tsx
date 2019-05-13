@@ -100,7 +100,7 @@ export class Root implements ComponentWillLoad, ComponentDidLoad, ComponentDidUn
 
   componentDidLoad() {
     // register the location listener
-    this._unregisterLocationListener = this.history.listen((...args) => this.onLocationChanged(...args));
+    this._unregisterLocationListener = this.history.listen((location, action) => this.onLocationChanged(location, action));
 
     // navigate initially
     const {pathname} = this.history.location;

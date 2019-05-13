@@ -3,9 +3,8 @@ import {sass} from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'component-preview',
-  preamble: '© 2019 Zalari - Unlicensed',
+  preamble: '© 2019 Zalari GmbH',
   outputTargets: [
-    {type: 'dist'},
     {type: 'docs'},
     {
       type: 'www',
@@ -13,9 +12,6 @@ export const config: Config = {
     },
   ],
   globalStyle: 'src/styles/global.scss',
-  devServer: {
-    port: 3006,
-  },
   plugins: [
     sass({
       includePaths: ['./node_modules'],

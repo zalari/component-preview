@@ -22,7 +22,6 @@ export const Preview = (options: Partial<PreviewOptions> = {}): PropertyDecorato
             break;
 
           case 'number':
-          case 'bigint':
             options.type = 'number';
             break;
 

@@ -29,7 +29,7 @@ export class PropertyText implements ComponentDidLoad {
   change!: EventEmitter<string | number>;
 
   @Element()
-  private _elementRef!: HTMLSoPreviewPropertyTextElement;
+  private _elementRef!: HTMLPreviewPropertyTextElement;
 
   @Watch('multi')
   setMultiline() {
